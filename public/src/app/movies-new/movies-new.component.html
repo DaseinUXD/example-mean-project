@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p *ngIf="createErrors">These are errors: {{createErrors|json}}</p>
+            <p> Movie being added: {{newMovie|json}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <!--<div class="col-2"></div>-->
+        <div class="col-12">
+            <form (submit)="createMovie()" class="form">
+                <fieldset>
+                    <legend class="h2">{{page_title}}</legend>
+                    <div class="form-group row">
+                        <label for="title" class="col-2 col-form-label h6">Movie Title:</label>
+                        <div class="col-4">
+                            <input id="title" required type="text" name="title" minlength="3"
+                                   [(ngModel)]="newMovie['title']" #title="ngModel" class="form-control">
+                            <div *ngIf="title.invalid" class="alert alert-danger">
+                                <div *ngIf="title['errors']['required']">Title is required.</div>
+                                <div *ngIf="title['errors']['minlength']">Title must be at least 3 characters long.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="user_name" class="col-2 col-form-label h6">Your Name:</label>
+                        <div class="col-4">
+                            <input id="user_name" required type="text" name="user_name" minlength="3"
+                                   [(ngModel)]="newMovie['reviews']['user_name']" #user_name="ngModel" class="form-control">
+                            <div *ngIf="user_name.invalid" class="alert alert-danger">
+                                <div *ngIf="user_name['errors']['required']">Name is required.</div>
+                                <div *ngIf="user_name['errors']['minlength']">Name must be at least 3 characters long.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="rating" class="col-2 col-form-label h6">Stars:</label>
+                        <div class="col-4">
+                            <select id="rating" class="select rounded" name="rating" [(ngModel)]="newMovie['reviews']['rating']" #rating="ngModel">
+                                <option class="dropdown-item">1</option>
+                                <option class="dropdown-item">2</option>
+                                <option class="dropdown-item">3</option>
+                                <option class="dropdown-item">4</option>
+                                <option class="dropdown-item">5</option>
+                            </select>
+
+                            <!--<input id="quantity" required min="0" type="number" name="quantity" [(ngModel)]="newProduct['quantity']" #quantity="ngModel"-->
+                                   <!--class="form-control">-->
+                            <!--<div *ngIf="quantity.invalid" class="alert alert-danger">-->
+                                <!--<div *ngIf="quantity['errors']['required']">Quantity is required.</div>-->
+                                <!--<div *ngIf="quantity['errors']['min']">Quantity must be greater than zero (0)</div>-->
+                            <!--</div>-->
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="review" class="col-2 col-form-label h6">Review:</label>
+                        <div class="col-4">
+                            <textarea id="review" required minlength="3" type="number" name="review" [(ngModel)]="newMovie['reviews']['review']" #price="ngModel"
+                                      class="form-control"></textarea>
+                            <div *ngIf="price.invalid" class="alert alert-danger">
+                                <div *ngIf="price['errors']['required']">Review is required.</div>
+                                <div *ngIf="price['errors']['min']">Review must be longer than three (3) characters.</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <!--<div class="col-2"></div>-->
+    </div>
+    <div class="row"></div>
+</div>
+
+<p>
+  movies-new works!
+</p>

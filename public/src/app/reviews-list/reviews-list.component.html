@@ -1,0 +1,44 @@
+<div class="container">
+    <form (submit)="deleteMovie(movie['_id'])" class="form">    <div class="row">
+        <div class="col-10">
+            <h2>
+                {{page_title}} {{movie['title']}}
+            </h2>
+        </div>
+        <div class="col-2">
+            <button class="m-2 btn btn-danger" type="submit" [routerLink]="['movie']">
+                Delete Movie
+            </button>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Reviewer</th>
+                        <th>Stars</th>
+                        <th>Review</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>{{movie['user_name']}}</td>
+                        <td>{{movie['rating']}}</td>
+                        <td>{{movie['review']}}</td>
+
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<p>
+    reviews-list works!
+</p>

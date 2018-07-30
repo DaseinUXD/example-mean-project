@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class HttpService {
 
-  constructor(private _http: HttpClient) { }
+    constructor(private _http: HttpClient) {
+    }
 
-  getItems(){
-    return this._http.get('/items');
-  }
+    getMovies() {
+        return this._http.get('/movies');
+    }
 
-  createItems(item: Object){
-    return this._http.post('/items', item)
-  }
+    getMovie(id) {
+        return this._http.get(`movies/${id}`)
+    }
+
+    createMovies(movie: Object) {
+        return this._http.post('/movies', movie)
+    }
+
+    deleteMovie(id) {
+        return this._http.delete(`/movies/${id}`)
+    }
 }

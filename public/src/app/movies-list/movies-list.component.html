@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h2>
+                {{page_title}}
+            </h2>
+        </div>
+        <div class="col-2">
+            <button class="m-2 btn btn-success" type="button" [routerLink]="['movie','new']">
+                Add New Movie
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Movie Title</th>
+                    <th>Available Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr *ngFor="let movie of movies">
+                    <td>{{movie['title']}}</td>
+                    <td>
+
+                        <button class="m-2 btn btn-outline-warning" type="button"
+                                [routerLink]="['movie', movie['_id']]">Read Reviews
+                        </button>
+                        <button class="m-2 btn btn-outline-danger" type="button"
+                                [routerLink]="['movie',movie['_id'],'review']">Write Review
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<p>
+  movies-list works!
+</p>

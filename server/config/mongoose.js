@@ -1,8 +1,8 @@
-const path     = require('path'),
-    fs       = require('fs'),
+const path = require('path'),
+    fs = require('fs'),
     mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/item_db')
+mongoose.connect('mongodb://localhost/movies_db')
 // create a variable that points to the models folder
 // var models_path = path.join(__dirname, '../models');
 // console.log(models_path);
@@ -14,4 +14,4 @@ mongoose.connect('mongodb://localhost/item_db')
 //         require(models_path + '/' + file);
 //     }
 // });
-require('../models/model_item.js');
+require('../models/model_movie.js');
