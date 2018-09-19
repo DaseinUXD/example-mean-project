@@ -9,6 +9,10 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@angular/animations": "^6.1.8",
+    "@angular/cdk": "^6.4.7",
+    "@angular/material": "^6.4.7",
+    "@stackblitz/sdk": "^1.2.0",
     "body-parser": "^1.18.3",
     "express": "~4.16.0",
     "express-session": "^1.15.6",

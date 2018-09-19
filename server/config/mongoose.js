@@ -1,6 +1,6 @@
-const path = require('path'),
-    fs = require('fs'),
-    mongoose = require('mongoose');
+const path     = require('path'),
+      fs       = require('fs'),
+      mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/movies_db')
 // create a variable that points to the models folder

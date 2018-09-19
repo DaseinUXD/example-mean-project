@@ -1,9 +1,9 @@
 const Movie = require('../models/model_movie');
 
 module.exports = {
-
+    
     movies: function (request, response) {
-
+        
         Movie.find({}, (error, movies) => {
             if (error) {
                 response.json({'message': 'error', 'error': ['Couldn\'t Movie.find()']});
@@ -13,7 +13,7 @@ module.exports = {
             }
         });
     },
-
+    
     movie: function (request, response) {
         id = request.params.id;
         Movie.findById(id, (error, movie) => {
@@ -25,7 +25,7 @@ module.exports = {
             }
         });
     },
-
+    
     movie_create: (request, response) => {
         movie = new Movie();
         // request.body contains the movies passed in from createMovies in http.service.ts
@@ -42,13 +42,13 @@ module.exports = {
             }
         });
     },
-
-    movie_review: (request, response) =>{
+    
+    movie_review: (request, response) => {
         id = request.params.id;
-        Movie.findByID(id, (error, movie)=>{
+        Movie.findByID(id, (error, movie) => {
             // THIS IS WHERE WE UPDATE THE MOVIE IN ORDER TO SAVE NEW USER AND REVIEWS
-        } )
-
+        })
+        
     }
-
+    
 };
